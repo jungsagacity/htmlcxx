@@ -14,12 +14,12 @@ namespace htmlcxx
 			public:
 				ParserSax(): mpLiteral(0),mCdata(false) {}//构造方法，初始化两个成员变量的值
 				virtual ~ParserSax() {}//析构方法
-
 				/** Parse the html code */
-				void parse(const std::string &html); //解析一个string格式的html文档
+				void parse(const std::string &html);//解析一个string格式的html文档
 
 				template <typename _Iterator>
-				void parse(_Iterator begin, _Iterator end);//使用两个类型相同的形参格式的解析器模板
+				void parse(_Iterator begin, _Iterator end);//使用两个类型相同的形参格式的解析器模板	
+				
 
 			protected:
 				// Redefine this if you want to do some initialization before
@@ -62,6 +62,6 @@ namespace htmlcxx
 	}//namespace HTML
 }//namespace htmlcxx
 
-#include "ParserSax.cpp"
+//#include "ParserSax.cpp"
 
 #endif

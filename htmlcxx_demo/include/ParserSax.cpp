@@ -1,3 +1,4 @@
+#include "ParserSax.h"
 #include <cctype>
 #include <cstring>
 #if !defined(WIN32) || defined(__MINGW32__)
@@ -23,12 +24,21 @@ literal_mode_elem[] =
 	{0, 0, 0}
 };
 
+void htmlcxx::HTML::ParserSax::parse(const std::string &html)
+{
+//	std::cerr << "Parsing string" << std::endl;
+	parse(html.c_str(), html.c_str() + html.length());
+}
+
+
+
 template <typename _Iterator>
 void htmlcxx::HTML::ParserSax::parse(_Iterator begin, _Iterator end)
 {
 //	std::cerr << "Parsing iterator" << std::endl;
 	parse(begin, end, typename std::iterator_traits<_Iterator>::iterator_category());
 }
+
 
 template <typename _Iterator>
 void htmlcxx::HTML::ParserSax::parse(_Iterator &begin, _Iterator &end, std::forward_iterator_tag)

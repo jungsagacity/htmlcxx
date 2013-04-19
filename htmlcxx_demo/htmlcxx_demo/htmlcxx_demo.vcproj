@@ -169,7 +169,7 @@
 			Name="include"
 			>
 			<File
-				RelativePath="..\include\Node.cc"
+				RelativePath="..\include\Node.cpp"
 				>
 			</File>
 			<File
@@ -193,7 +193,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\include\targetver.h"
+				RelativePath="..\include\ParserSax.tcc"
+				>
+			</File>
+			<File
+				RelativePath="..\include\stdafx.h"
 				>
 			</File>
 			<File
