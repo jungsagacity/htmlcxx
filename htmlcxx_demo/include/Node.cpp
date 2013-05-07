@@ -24,13 +24,11 @@ void Node::parseAttributes()
 	//跳过接下来所有遇到的空格字符
 	while (isspace(*ptr)) ++ptr; 
 
-	// Skip tagname
-	 //判断是否是普通字符，不是则返回
-	if (!isalpha(*ptr)) return;
-	//不断后移ptr指针，直到遇到空格字符
+	// Skip tagname	
+	if (!isalpha(*ptr)) return;	
 	while (!isspace(*ptr)) 
 	{
-		if(*ptr == '>')  return; //added by wujun 2013.1.22
+		if(*ptr == '>')  return; //added by wujun 2013.1.22 此时说明没有该tag没有属性
 		++ptr;
 	
 	}

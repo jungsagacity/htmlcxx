@@ -10,7 +10,7 @@ int main()
 {
 
 	//解析一段Html代码
-	string html = "<td>我们";
+	string html = "<td name = 'lulu'>123</td>";
 	HTML::ParserDom parser;
 	tree<HTML::Node> dom = parser.parseTree(html);
 	cout<<dom<<endl;

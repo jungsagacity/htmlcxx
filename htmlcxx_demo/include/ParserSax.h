@@ -26,14 +26,14 @@ namespace htmlcxx
 				// the parsing
 				virtual void beginParsing() {}
 	
-				//以下几个虚函数，都在ParseDom.cc中进行了实现
+				//以下几个虚函数，都在ParseDom.cpp中进行了实现
 				virtual void foundTag(Node node, bool isEnd) {}
 				virtual void foundText(Node node) {}
 				virtual void foundComment(Node node) {}
 
 				virtual void endParsing() {}
 
-				//以下是几个模板，大部分都在ParseSax.tcc文件中实现
+				//以下是几个模板，大部分都在ParseSax.cpp文件中实现
 				template <typename _Iterator>
 				void parse(_Iterator &begin, _Iterator &end,std::forward_iterator_tag);
 
@@ -61,7 +61,5 @@ namespace htmlcxx
 
 	}//namespace HTML
 }//namespace htmlcxx
-
-//#include "ParserSax.cpp"
 
 #endif

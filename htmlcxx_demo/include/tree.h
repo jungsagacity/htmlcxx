@@ -961,29 +961,32 @@ typename tree<T, tree_node_allocator>::sibling_iterator tree<T, tree_node_alloca
 template <class T, class tree_node_allocator>
 template <typename iter>
 iter tree<T, tree_node_allocator>::flatten(iter position)
-   {
+{
    if(position.node->first_child==0)
       return position;
 
    tree_node *tmp=position.node->first_child;
-   while(tmp) {
+   while(tmp) 
+   {
       tmp->parent=position.node->parent;
       tmp=tmp->next_sibling;
-      } 
-   if(position.node->next_sibling) {
+   } 
+   if(position.node->next_sibling) 
+   {
       position.node->last_child->next_sibling=position.node->next_sibling;
       position.node->next_sibling->prev_sibling=position.node->last_child;
-      }
-   else {
+   }
+   else 
+   {
       position.node->parent->last_child=position.node->last_child;
-      }
+   }
    position.node->next_sibling=position.node->first_child;
    position.node->next_sibling->prev_sibling=position.node;
    position.node->first_child=0;
    position.node->last_child=0;
 
    return position;
-   }
+}
 
 
 template <class T, class tree_node_allocator>

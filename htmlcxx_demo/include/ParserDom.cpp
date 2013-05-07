@@ -135,7 +135,6 @@ void ParserDom::foundTag(Node node, bool isEnd)
 		else 
 		{
 			//DEBUGP("Unmatched tag %s\n", node.text().c_str());
-
 			// Treat as comment
 			node.isTag(false);
 			node.isComment(true);

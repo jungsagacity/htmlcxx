@@ -5,16 +5,13 @@
 #include <strings.h>
 #endif
 
-//#define DEBUG
-//#include "debug.h"
 
-static
-struct literal_tag {
+
+static struct literal_tag {
 	int len;
 	const char* str;
 	int is_cdata;
-}   
-literal_mode_elem[] =
+} literal_mode_elem[] =
 {   
 	{6, "script", 1},
 	{5, "style", 1},
@@ -237,7 +234,6 @@ void htmlcxx::HTML::ParserSax::parse(_Iterator &begin, _Iterator &end, std::forw
 							this->parseContent(begin, c);
 
 						d = this->skipHtmlTag(d, end);
-
 						this->parseComment(c, d);
 
 						// continue from the end of the comment
